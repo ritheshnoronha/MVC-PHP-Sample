@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf8" />
-        <title><?php echo $title; ?> | Article Details</title>
+        <title><?php echo $title; ?> | Song Details</title>
     </head>
     <body>
 	
@@ -13,8 +13,7 @@
 		
 			<article>
 				<header>
-					<h1><?php echo $title; ?></h1>
-                    <p><?php echo $songBody; ?></p>
+					<p><h1><?php echo $title; ?></h1> by:<?php echo $artist; ?></p>
                     <p><?php echo $link; ?></p>
 				</header>
 			

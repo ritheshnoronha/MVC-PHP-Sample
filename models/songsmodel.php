@@ -11,7 +11,7 @@ class SongsModel extends Model
                     a.link
 				FROM 
 					song a
-				ORDER BY a.artist DESC";
+				ORDER BY a.artist ASC";
 		
 		$this->_setSql($sql);
 		$songs = $this->getAll();

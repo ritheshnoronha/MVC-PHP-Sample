@@ -31,8 +31,8 @@ class SongsController extends Controller
 			
 			if ($songs)
 			{
-				$this->_view->set('title', $songs['artist']);
-				$this->_view->set('songBody', $songs['track']);
+				$this->_view->set('title', $songs['track']);
+				$this->_view->set('artist', $songs['artist']);
 				$this->_view->set('link', $songs['link']);
 			}
 			else 

@@ -93,4 +93,54 @@ class ContactController extends Controller
 
         return $this->_view->output();
     }
+    
+    public function details($leadId)
+	{
+		try {
+			
+			$lead = $this->_model->getLeadById((int)$leadId);
+			
+			if ($lead)
+			{
+				$this->_view->set('firstname', $lead['first_name']);
+				$this->_view->set('lastname', $lead['last_name']);
+				$this->_view->set('message', $lead['message']);
+			}
+			else 
+			{
+				$this->_view->set('title', 'Invalid lead ID');
+				$this->_view->set('noLead', true);
+			}
+			
+			return $this->_view->output();
+			 
+		} catch (Exception $e) {
+			echo '<h1>Application error:</h1>' . $e->getMessage();
+		}
+	}
+    public function edit($leadId)
+	{
+		try {
+			
+			$lead = $this->_model->getLeadById((int)$leadId);
+			
+			if ($lead)
+			{
+				$this->_view->set('firstname', $lead['first_name']);
+				$this->_view->set('lastname', $lead['last_name']);
+                $this->_view->set('email', $lead['email']);
+				$this->_view->set('message', $lead['message']);
+			}
+			else 
+			{
+				$this->_view->set('title', 'Invalid lead ID');
+				$this->_view->set('noLead', true);
+			}
+			
+			return $this->_view->output();
+			 
+		} catch (Exception $e) {
+			echo '<h1>Application error:</h1>' . $e->getMessage();
+		}
+	}
 }
